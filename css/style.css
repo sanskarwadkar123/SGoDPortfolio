@@ -903,6 +903,12 @@ button:focus-visible {
     border-radius: 50%;
 }
 
+.timeline-dot.is-current {
+    background: var(--green);
+    outline-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(113, 136, 108, 0.16);
+}
+
 .timeline-top {
     display: flex;
     justify-content: space-between;
@@ -1391,4 +1397,92 @@ button:focus-visible {
         animation: none !important;
     }
 
+}
+/* =========================================
+   13. GITHUB & LEETCODE STATISTICS
+========================================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+.stats-card {
+    padding: 24px;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.stats-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.stats-heading h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.stats-heading a {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.stats-heading a:hover { color: var(--accent-dark); }
+
+.stats-visual {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 15px;
+}
+
+.stats-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+.stats-languages { width: 85%; margin: 15px auto 0; }
+
+.stats-fallback {
+    padding: 15px;
+    color: var(--muted);
+    background: rgba(238, 228, 213, 0.6);
+    border: 1px dashed var(--line);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.stats-fallback a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.stats-fallback[hidden] { display: none; }
+
+@media (max-width: 900px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .stats-card { max-width: 650px; width: 100%; margin-inline: auto; }
+}
+
+@media (max-width: 700px) {
+    .stats-card { padding: 18px; }
+    .stats-heading { margin-bottom: 15px; }
+    .stats-languages { width: 100%; }
+}
+
+@media (max-width: 380px) {
+    .stats-heading { align-items: flex-start; flex-direction: column; }
 }
